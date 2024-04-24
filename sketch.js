@@ -11,7 +11,7 @@ const options = {
     zoom: 10, //initial zoom level - 10 shows all locations 
     style: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png' //where we are getting our map tiles from
   }
-  
+
   // Create an instance of Leaflet
   const mappa = new Mappa('Leaflet');
   
@@ -40,22 +40,32 @@ const options = {
   
     //this takes a lat/long coordinate, and conveniently gives us back a 'pos' object
     //the pos object has an 'x' and 'y' property, giving us the relative point on our canvas
-    let pos = myMap.latLngToPixel(51.236221, -0.570409); //Guildford
-    let pos2 = myMap.latLngToPixel(51.316772, -0.560035);//Woking
-    let pos3 = myMap.latLngToPixel(51.232910,-0.329740); //Dorking
-    let pos4 = myMap.latLngToPixel(51.431480, -0.515525); //Staines 
+    let pos = myMap.latLngToPixel(51.243673, -0.574348); //Guildford1
+    let pos2 = myMap.latLngToPixel(51.330397, -0.559895);//Woking1
+    let pos3 = myMap.latLngToPixel(51.240211,-0.330556); //Dorking1
+    let pos4 = myMap.latLngToPixel(51.449728, -0.508396); //Staines1
+    let pos5 = myMap.latLngToPixel(51.243673,-0.559832); //Guildford2
+    let pos6 = myMap.latLngToPixel(51.330397,-0.545379); //Woking2
+    let pos7 = myMap.latLngToPixel(51.240211,-0.316040); //Dorking2
+    let pos8 = myMap.latLngToPixel(51.449728, -0.493880); //Staines2
+
 
      // buttons, each with different properties
-     buttons[0] = new Button(pos.x, pos.y, 15, 15,'');   
-     buttons[1] = new Button(pos2.x, pos2.y, 15, 15,''); 
-     buttons[2] = new Button(pos3.x, pos3.y, 15, 15,'');  
-     buttons[3] = new Button(pos4.x, pos4.y, 15,15,'');
+     buttons[0] = new Button(pos.x, pos.y, 15,'Guildford1.html');  
+     buttons[1] = new Button(pos2.x, pos2.y, 15,'Woking1.html');
+     buttons[2] = new Button(pos3.x, pos3.y, 15,'Dorking1.html'); 
+     buttons[3] = new Button(pos4.x, pos4.y, 15,'Staines1.html');
+     buttons[4] = new Button(pos5.x, pos5.y, 15,'Guildford2.html')
+     buttons[5] = new Button(pos6.x, pos6.y, 15,'Guildford2.html')
+     buttons[6] = new Button(pos7.x, pos7.y, 15,'Guildford2.html')
+     buttons[7] = new Button(pos8.x, pos8.y, 15,'Guildford2.html')
   
+
     //TEXT ON THE MAP 
     fill(0);
     textSize(20);
     textFont('Arial') //changes the font on the map.
-    text('   Guildford', pos.x, pos.y-5) //a label with slight y-offset 
+    text('   Guildford',pos.x, pos.y-5) //PUSHES THE LABEL AWAY FROM THE BUTTON
     text('   Woking',pos2.x, pos2.y-5);
     text('   Dorking',pos3.x, pos3.y-5);
     text('   Staines',pos4.x, pos4.y-5);
@@ -111,7 +121,8 @@ const options = {
     // What to do when the dot is clicked on
     mouseClicked() {
       if(this.isHoveredOver()) {
-          window.location.href = this.href; 
+        window.location.href = this.href; 
+          
       }
    }
   }
@@ -119,4 +130,3 @@ const options = {
   //MAKE A SPACE TO THE RIGHT OF THE MAP, WHERE OUR INFORMATION WILL BE HELD.
   //MAKE THE BUTTONS LEAD TO THE INDIVIDUAL PAGES - HAVE THE PAGES APPEAR ON THE RIGHT SIDE OF THE MAP.
   //HAVE AN INTRODUCTION APPEAR ON THE RIGHT SIDE OF THE MAP IN THE BEGINNING,
-  
