@@ -56,9 +56,9 @@ const options = {
      buttons[2] = new Button(pos3.x, pos3.y, 15,'Dorking1.html'); 
      buttons[3] = new Button(pos4.x, pos4.y, 15,'Staines1.html');
      buttons[4] = new Button(pos5.x, pos5.y, 15,'Guildford2.html')
-     buttons[5] = new Button(pos6.x, pos6.y, 15,'Guildford2.html')
-     buttons[6] = new Button(pos7.x, pos7.y, 15,'Guildford2.html')
-     buttons[7] = new Button(pos8.x, pos8.y, 15,'Guildford2.html')
+     buttons[5] = new Button(pos6.x, pos6.y, 15,'Woking2.html')
+     buttons[6] = new Button(pos7.x, pos7.y, 15,'Dorking2.html')
+     buttons[7] = new Button(pos8.x, pos8.y, 15,'Staines2.html')
   
 
     //TEXT ON THE MAP 
